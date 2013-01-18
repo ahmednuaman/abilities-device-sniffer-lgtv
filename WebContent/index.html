@@ -2,7 +2,69 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>LG Device Sniffer</title>
 </head>
-<body></body>
+<body onload="initTest()">
+    <object type="application/x-netcast-info" id="device" width="0" height="0"></object>
+    <form action="http://192.168.1.114/abilities/index.php" id="test-form" method="post" target="test-frame"><input type="text" id="test-device-id" name="device_id"></form>
+    <iframe name="test-frame" id="test-frame" src="" frameborder="0" width="100%" height="100%"></iframe>
+    <script>
+        function initTest()
+        {
+            var device = document.getElementById('device');
+            var form = document.getElementById('test-form');
+            var input = document.getElementById('test-device-id');
+            var deviceId;
+
+            if (device)
+            {
+                // ermagad
+                deviceId = device.version + '; ' +
+                    device.manufacturer + '; ' +
+                    device.modelName + '; ' +
+                    device.serialNumber + '; ' +
+                    device.swVersion + '; ' +
+                    device.hwVersion + '; ' +
+                    device.SDKVersion + '; ' +
+                    device.osdResolution + '; ' +
+                    device.networkType + '; ' +
+                    device.net_macAddress + '; ' +
+                    device.drmClientInfo + '; ' +
+                    device.net_dhcp + '; ' +
+                    device.net_isConnected + '; ' +
+                    device.net_hasIP + '; ' +
+                    device.net_ipAddress + '; ' +
+                    device.net_netmask + '; ' +
+                    device.net_gateway + '; ' +
+                    device.net_dns1 + '; ' +
+                    device.net_dns2 + '; ' +
+                    device.supportMouse + '; ' +
+                    device.supportVoiceRecog + '; ' +
+                    device.supportPentouch + '; ' +
+                    device.support3D + '; ' +
+                    device.support3DMode.from_2d_to_3d + '; ' +
+                    device.support3DMode.side_by_side + '; ' +
+                    device.support3DMode.side_by_side_rl + '; ' +
+                    device.support3DMode.top_bottom + '; ' +
+                    device.support3DMode.checker_bd + '; ' +
+                    device.preferredSubtitleLanguage + '; ' +
+                    device.preferredAudioLanguage + '; ' +
+                    device.preferredSubtitleStatus + '; ' +
+                    device.tvLanguage2 + '; ' +
+                    device.tvCountry2 + '; ' +
+                    device.timeZone + '; ' +
+                    device.platform + '; ' +
+                    device.chipset;
+            }
+            else
+            {
+                return alert('Failed to get device!');
+            }
+
+            input.value = deviceId;
+
+            form.submit();
+        }
+    </script>
+</body>
 </html>
