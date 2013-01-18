@@ -1,0 +1,1 @@
+A LG TV specific device sniffer for [abilities](https://github.com/ahmednuaman/abilities).
