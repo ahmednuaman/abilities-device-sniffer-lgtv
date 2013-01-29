@@ -3,20 +3,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>LG Device Sniffer</title>
+<style>
+    html,
+    body {
+        background: #ffffff;
+    }
+</style>
 </head>
 <body onload="initTest()">
     <object type="application/x-netcast-info" id="device" width="0" height="0"></object>
-    <form action="http://www.ahmednuaman.com/_/abilities/index.php" id="test-form" method="post" target="test-frame">
-        <input type="text" id="test-device-id" name="device_id">
-        <input type="text" id="test-autorun" name="autorun" value="1">
+    <form action="http://www.ahmednuaman.com/_/abilities/index.php" id="test-form" method="post">
+        <input type="hidden" id="test-device-id" name="device_id">
+        <input type="hidden" id="test-user-agent" name="user_agent">
+        <!-- <input type="text" id="test-autorun" name="autorun" value="1"> -->
     </form>
-    <iframe name="test-frame" id="test-frame" src="" frameborder="0" width="100%" height="100%"></iframe>
     <script>
         function initTest()
         {
             var device = document.getElementById('device');
             var form = document.getElementById('test-form');
-            var input = document.getElementById('test-device-id');
+            var deviceIdInput = document.getElementById('test-device-id');
+            var userAgentInput = document.getElementById('test-user-agent');
             var deviceId;
 
             if (device)
@@ -64,7 +71,8 @@
                 return alert('Failed to get device!');
             }
 
-            input.value = deviceId;
+            deviceIdInput.value = deviceId;
+            userAgentInput.value = navigator.userAgent;
 
             form.submit();
         }
