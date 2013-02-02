@@ -29,42 +29,35 @@
             if (device)
             {
                 // ermagad
-                deviceId = device.version + '; ' +
-                    device.manufacturer + '; ' +
-                    device.modelName + '; ' +
-                    device.serialNumber + '; ' +
-                    device.swVersion + '; ' +
-                    device.hwVersion + '; ' +
-                    device.SDKVersion + '; ' +
-                    device.osdResolution + '; ' +
-                    device.networkType + '; ' +
-                    device.net_macAddress + '; ' +
-                    // device.drmClientInfo + '; ' +
-                    device.net_dhcp + '; ' +
-                    device.net_isConnected + '; ' +
-                    device.net_hasIP + '; ' +
-                    device.net_ipAddress + '; ' +
-                    device.net_netmask + '; ' +
-                    device.net_gateway + '; ' +
-                    device.net_dns1 + '; ' +
-                    device.net_dns2 + '; ' +
-                    device.supportMouse + '; ' +
-                    device.supportVoiceRecog + '; ' +
-                    device.supportPentouch + '; ' +
-                    device.support3D + '; ' +
-                    device.support3DMode.from_2d_to_3d + '; ' +
-                    device.support3DMode.side_by_side + '; ' +
-                    device.support3DMode.side_by_side_rl + '; ' +
-                    device.support3DMode.top_bottom + '; ' +
-                    device.support3DMode.checker_bd + '; ' +
-                    device.preferredSubtitleLanguage + '; ' +
-                    device.preferredAudioLanguage + '; ' +
-                    device.preferredSubtitleStatus + '; ' +
-                    device.tvLanguage2 + '; ' +
-                    device.tvCountry2 + '; ' +
-                    device.timeZone + '; ' +
-                    device.platform + '; ' +
-                    device.chipset;
+                deviceId = '{' +
+                    '"platform_version": "' + device.version + '", ' +
+                    '"patform": "' + device.manufacturer + '", ' +
+                    '"model": "' + device.modelName + '", ' +
+                    '"device_id": "' + device.serialNumber + '", ' +
+                    '"firmware": "' + device.swVersion + '", ' +
+                    '"hardware": "' + device.hwVersion + '", ' +
+                    '"sdk_version": "' + device.SDKVersion + '", ' +
+                    '"screen_resolution": "' + device.osdResolution + '", ' +
+                    '"network_type": "' + device.networkType + '", ' +
+                    '"network_mac_address": "' + device.net_macAddress + '", ' +
+                    '"support_mouse": "' + device.supportMouse + '", ' +
+                    '"support_voicerecog": "' + device.supportVoiceRecog + '", ' +
+                    '"support_pentouch": "' + device.supportPentouch + '", ' +
+                    '"mode_3d": "' + device.support3D + '", ' +
+                    '"support_3dmode": "' + device.support3DMode.from_2d_to_3d + '", ' +
+                    '"support_3dmode": "' + device.support3DMode.side_by_side + '", ' +
+                    '"support_3dmode": "' + device.support3DMode.side_by_side_rl + '", ' +
+                    '"support_3dmode": "' + device.support3DMode.top_bottom + '", ' +
+                    '"support_3dmode": "' + device.support3DMode.checker_bd + '", ' +
+                    '"preferred_subtitle_language": "' + device.preferredSubtitleLanguage + '", ' +
+                    '"preferred_audio_language": "' + device.preferredAudioLanguage + '", ' +
+                    '"preferred_subtitles_tatus": "' + device.preferredSubtitleStatus + '", ' +
+                    '"language": "' + device.tvLanguage2 + '", ' +
+                    '"country": "' + device.tvCountry2 + '", ' +
+                    '"timezone": "' + device.timeZone + '", ' +
+                    '"device_platform": "' + device.platform + '", ' +
+                    '"chipset": "' + device.chipset + '"'
+                    + '}';
             }
             else
             {
