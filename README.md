@@ -1,1 +1,2 @@
-# Nothing to see here...
+# Abilities sniffer app for LG Smart TV
+This is an app to install on LG Smart TV devices (as well as Blu Rays). It uses the `application/x-netcast-info` device object to build up a picture of the device in question before submitting that data to [http://ab.iliti.es](http://ab.iliti.es) for testing.
